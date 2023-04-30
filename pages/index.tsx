@@ -14,10 +14,10 @@ export default function Home() {
               player.
             </li>
             <li>
-              If you're a player, click on the tabla on this page to get one.
+              If you are a player, click on the tabla on this page to get one.
             </li>
             <li>
-              If you're a dealer, click on the start button after all of the
+              If you are a dealer, click on the start button after all of the
               players have gotten their tablas. The dealer will call out the
               cards one at a time.
             </li>
