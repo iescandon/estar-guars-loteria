@@ -1,44 +1,75 @@
+import Nav from "@/components/nav";
 import Link from "next/link";
-
-// TODO: change favicon
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <div>
-        add instructions on start screen, disappear when game starts qr code to
-        get to player screen
+    <section className="min-h-screen flex flex-col items-center pt-8 pb-12 px-10">
+      <Nav />
+      <div className="flex flex-row w-full max-w-[1400px] justify-center">
+        <div className="w-2/3 bg-white rounded-2xl space-y-4 py-4 px-8">
+          <h1 className="text-2xl font-bold">How to Play Loteria</h1>
+          <ol className="space-y-2 list-decimal">
+            <li>
+              Assign one person to be the dealer. Everyone else will be a
+              player.
+            </li>
+            <li>
+              If you're a player, click on the tabla on this page to get one.
+            </li>
+            <li>
+              If you're a dealer, click on the start button after all of the
+              players have gotten their tablas. The dealer will call out the
+              cards one at a time.
+            </li>
+            <li>
+              If a player has that card, they will click on the card in their
+              tabla to place a frijol on it. If you accidentally put a frijol on
+              a card by accident, click on it again to remove the frijol.
+            </li>
+            <li>
+              The dealer will continue to call out cards until there is a
+              winner!
+            </li>
+            <li>
+              A player can win by having 4 in a row (diagonically, verically, or
+              horizontally) or 4 corners. If a player has won, they must yell
+              out "¡Buenas!" before the next card has been called.
+            </li>
+            <li>
+              After the dealer verifies that the player has officially won, they
+              will end the game. The game can be played as many times as you
+              like! The dealer can continue to be the dealer or they can choose
+              someone else to be the dealer.
+            </li>
+            <li>
+              Players can continue to use the same tabla for future games, all
+              they need to do is click on all their beans to clear their table.
+              If a player would like a different tabla, click refresh to get a
+              brand new tabla with new cards.
+            </li>
+          </ol>
+          <div className="flex flex-row w-full justify-center">
+            <Link
+              className="bg-[#ffe81f] px-3 py-1 rounded-full text-lg font-semibold"
+              href="/dealer"
+            >
+              START
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center pl-10 relative">
+          <Link className="" href="/player">
+            <img
+              className="h-[500px] shadow-2xl"
+              src="/images/tabla.png"
+              alt="star wars splash image"
+            />
+            <div className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2">
+              <div className="">TABLA</div>
+            </div>
+          </Link>
+        </div>
       </div>
-      <Link className="" href="/dealer">
-        start
-      </Link>
-      <Link className="pl-8" href="/player">
-        player
-      </Link>
-    </div>
+    </section>
   );
 }
-
-// import Link from "next/link";
-
-// export default function Home() {
-//   return (
-// <div className="min-h-screen bg-[url(/images/hyperspace.jpg)] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
-// {/* <img src="/images/splash-crop.png" alt="star wars splash image" /> */}
-// <div className="flex flex-row space-x-8 mt-8">
-//   <Link
-//     className="bg-white py-2 px-4 hover:animate-pulse rounded-md text-xl"
-//     href="/dealer"
-//   >
-//     Dealer
-//   </Link>
-//   <Link
-//     className="bg-white py-2 px-4 hover:animate-pulse rounded-md text-xl"
-//     href="/player"
-//   >
-//     Player
-//   </Link>
-// </div>
-// </div>
-//   );
-// }
