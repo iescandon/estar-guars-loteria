@@ -31,9 +31,9 @@ export default function Home() {
               winner!
             </li>
             <li>
-              A player can win by having 4 in a row (diagonically, verically, or
-              horizontally) or 4 corners. If a player has won, they must yell
-              out "¡Buenas!" before the next card has been called.
+              A player can win by having 4 in a row (diagonically, vertically,
+              or horizontally) or by having the 4 corners. If a player has won,
+              they must yell out ¡Buenas! before the next card has been called.
             </li>
             <li>
               After the dealer verifies that the player has officially won, they
