@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="min-h-screen flex flex-col items-center pt-8 pb-12 px-10">
-      <Nav />
-      <div className="flex flex-row w-full max-w-[1400px] justify-center">
-        <div className="w-2/3 bg-white rounded-2xl space-y-4 py-4 px-8">
+    <section className="min-h-screen flex flex-col items-center p-4 md:pt-8 md:pb-12 md:px-10">
+      <Nav reason="how to play" path="how-to-play" />
+      <div className="flex flex-row h-full w-full max-w-[800px] justify-center items-center pt-8">
+        {/* <div className="w-2/3 bg-white rounded-2xl space-y-4 py-4 px-8">
           <h1 className="text-2xl font-bold">How to Play Loteria</h1>
           <ol className="space-y-2 list-decimal">
             <li>
@@ -56,17 +56,23 @@ export default function Home() {
               START
             </Link>
           </div>
-        </div>
-        <div className="flex flex-col items-center justify-center pl-10 relative">
-          <Link className="" href="/player">
+        </div> */}
+        <div className="flex flex-col items-center justify-center w-1/2">
+          <Link className="" href="/dealer">
             <img
-              className="h-[500px] shadow-2xl"
-              src="/images/tabla.png"
+              className="h-[175px] md:h-[300px]"
+              src="/images/dealer.png"
               alt="star wars splash image"
             />
-            <div className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2">
-              <div className="">TABLA</div>
-            </div>
+          </Link>
+        </div>
+        <div className="flex flex-col items-center justify-center w-1/2">
+          <Link className="" href="/player">
+            <img
+              className="h-[175px] md:h-[300px]"
+              src="/images/player.png"
+              alt="star wars splash image"
+            />
           </Link>
         </div>
       </div>

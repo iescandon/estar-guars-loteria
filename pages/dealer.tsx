@@ -1,21 +1,20 @@
-import Link from "next/link";
 import Carta from "@/components/carta";
 import { useState, useEffect } from "react";
 import Nav from "@/components/nav";
 
 export default function Dealer() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [hasStarted, setHasStarted] = useState<boolean>(false);
   const [cardNum, setCardNum] = useState<number | undefined>(undefined);
   const [discardedCardsArray, setDiscardedCardsArray] = useState<Array<number>>(
     []
   );
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      getCard();
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  // setTimeout(() => {
+  //   setIsLoading(false);
+  // getCard();
+  // }, 3000);
+  // }, []);
 
   const generateRandomNumber = (num: number) =>
     Math.floor(Math.random() * num) + 1;
@@ -39,29 +38,33 @@ export default function Dealer() {
   };
 
   return (
-    <section
-      className={`min-h-screen ${
-        isLoading && "flex flex-col justify-center"
-      } pt-8 pb-12 px-10`}
-    >
-      {isLoading ? (
-        <div className="font-bayon text-[100px] flex flex-row justify-center items-center">
-          Corre y se va <br></br> corriendo con...
-        </div>
-      ) : (
-        <>
-          <Nav />
-          <div className="flex flex-row justify-center">
-            <div className="h-[300px] border border-[12px] border-white shadow-2xl">
-              <Carta cardNum={cardNum} />
-            </div>
+    <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10">
+      <Nav reason={"end game"} />
+      <div className="flex flex-row justify-center pt-8">
+        {!hasStarted ? (
+          <button
+            onClick={() => {
+              getCard();
+              setHasStarted(true);
+            }}
+          >
+            <img
+              className="h-[300px]"
+              src="/images/start.png"
+              alt="star wars splash image"
+            />
+          </button>
+        ) : (
+          <div className="h-[300px] border border-[12px] border-white shadow-2xl">
+            <Carta cardNum={cardNum} />
           </div>
-          <div className="flex flex-row justify-center pb-6">
-            <Link className="" href="/">
-              END GAME
-            </Link>
+        )}
+      </div>
+      {hasStarted && (
+        <>
+          <div className="flex flex-row justify-center pb-8">
             <button
-              className="pl-8"
+              className=""
               onClick={() => {
                 getCard();
               }}
