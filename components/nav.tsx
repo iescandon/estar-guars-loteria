@@ -11,7 +11,7 @@ export default function Nav({ reason, path }: NavProps) {
       <Link className="h-full" href="/">
         <img
           className="h-full drop-shadow-xl"
-          src="/images/estar-guars.png"
+          src="/images/nav-logo.png"
           alt="star wars splash image"
         />
       </Link>

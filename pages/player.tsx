@@ -67,7 +67,7 @@ export default function Player() {
 
   return (
     <>
-      <section className="flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white">
+      <section className="flex flex-row md:items-center justify-center md:p-4 md:min-h-screen">
         <Tabla generateRandomNumber={generateRandomNumber} />
       </section>
     </>
