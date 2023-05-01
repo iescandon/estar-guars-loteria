@@ -4,11 +4,10 @@ import Carta from "../components/carta";
 export default function Player() {
   const [randomNumberArray, setRandomNumberArray] =
     useState<Array<number> | null>(null);
-  // const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     generateTabla();
-    // setIsLoading(false);
   }, []);
 
   const generateRandomNumber = (num: number) =>
@@ -26,31 +25,32 @@ export default function Player() {
       }
     }
     setRandomNumberArray(array);
+    setIsLoading(false);
   };
 
   return (
     <section className="flex flex-col items-center justify-center md:p-4 md:min-h-screen">
-      {/* {!isLoading && (
-        <> */}
-      <img className="md:shadow-3xl" src="/images/title.png" alt="title" />
-      <div className="grid grid-cols-4 grid-rows-4 border border-4 border-white md:shadow-3xl">
+      {!isLoading && (
         <>
-          {randomNumberArray?.map((num, i) => (
-            <div
-              key={`div-${i}`}
-              className="border border-4 border-white relative hover:cursor-pointer"
-            >
-              <Carta
-                key={i}
-                cardNum={num}
-                generateRandomNumber={generateRandomNumber}
-              />
-            </div>
-          ))}
+          <img className="md:shadow-3xl" src="/images/title.png" alt="title" />
+          <div className="grid grid-cols-4 grid-rows-4 border border-4 border-white md:shadow-3xl">
+            <>
+              {randomNumberArray?.map((num, i) => (
+                <div
+                  key={`div-${i}`}
+                  className="border border-4 border-white relative hover:cursor-pointer"
+                >
+                  <Carta
+                    key={i}
+                    cardNum={num}
+                    generateRandomNumber={generateRandomNumber}
+                  />
+                </div>
+              ))}
+            </>
+          </div>
         </>
-      </div>
-      {/* </>
-      )} */}
+      )}
     </section>
   );
 }
