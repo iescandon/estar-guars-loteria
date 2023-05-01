@@ -55,7 +55,7 @@ export default function Dealer() {
             />
           </button>
         ) : (
-          <div className="h-[300px] border border-[12px] border-white shadow-2xl">
+          <div className="h-[300px] w-[200px] border border-[12px] border-white shadow-2xl">
             <Carta cardNum={cardNum} />
           </div>
         )}
