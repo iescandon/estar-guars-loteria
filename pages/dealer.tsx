@@ -43,11 +43,11 @@ export default function Dealer() {
     <>
       {!hasStarted ? (
         <>
-          <section className="md:h-screen p-4">
+          <section className="h-screen p-4">
             {/* {screenHeight && (
               <> */}
             <div
-              className="flex flex-row h-[350px] md:h-2/3 lg:h-full w-full items-center justify-center"
+              className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center"
               // className={`flex flex-row h-[${screenHeight}px] md:h-2/3 lg:h-full w-full items-center justify-center`}
             >
               <button
@@ -65,7 +65,7 @@ export default function Dealer() {
               </button>
             </div>
             <img
-              className="md:absolute md:bottom-0 md:right-0"
+              className="absolute bottom-0 right-0"
               src="/images/baby-yoda.png"
               alt="star wars splash image"
             />
