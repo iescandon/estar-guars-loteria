@@ -39,7 +39,7 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
           {randomNumberArray?.map((num, i) => (
             <div
               key={`div-${i}`}
-              className="border border-4 border-white relative hover:cursor-pointer bg-white"
+              className="border border-4 border-white relative hover:cursor-pointer"
             >
               <Carta
                 key={i}

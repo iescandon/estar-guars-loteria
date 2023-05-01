@@ -87,7 +87,7 @@ export default function Dealer() {
               {discardedCardsArray?.map((num, i) => (
                 <div
                   key={`div-${i}`}
-                  className="border border-8 border-white mb-2 shadow-2xl"
+                  className="border border-8 border-white bg-white mb-2 shadow-2xl"
                 >
                   <Carta key={i} cardNum={num} />
                 </div>
