@@ -34,7 +34,7 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
       {/* {!isLoading && (
         <> */}
       <img className="md:shadow-3xl" src="/images/title.png" alt="title" />
-      <div className="grid grid-cols-4 grid-rows-4 md:shadow-3xl border border-4 border-white">
+      <div className="grid grid-cols-4 grid-rows-4 md:shadow-3xl border border-4 border-white bg-white">
         <>
           {randomNumberArray?.map((num, i) => (
             <div
