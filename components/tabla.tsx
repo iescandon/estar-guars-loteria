@@ -8,11 +8,11 @@ type TablaProps = {
 export default function Tabla({ generateRandomNumber }: TablaProps) {
   const [randomNumberArray, setRandomNumberArray] =
     useState<Array<number> | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     generateArray();
-    setIsLoading(false);
+    // setIsLoading(false);
   }, []);
 
   const generateArray = () => {
@@ -31,27 +31,27 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
 
   return (
     <div className="flex flex-col">
-      {!isLoading && (
+      {/* {!isLoading && (
+        <> */}
+      <img className="md:shadow-3xl" src="/images/title.png" alt="title" />
+      <div className="grid grid-cols-4 grid-rows-4 md:shadow-3xl border border-4 border-white">
         <>
-          <img className="md:shadow-3xl" src="/images/title.png" alt="title" />
-          <div className="grid grid-cols-4 grid-rows-4 md:shadow-3xl border border-4 border-white">
-            <>
-              {randomNumberArray?.map((num, i) => (
-                <div
-                  key={`div-${i}`}
-                  className="border border-4 border-white relative hover:cursor-pointer"
-                >
-                  <Carta
-                    key={i}
-                    cardNum={num}
-                    generateRandomNumber={generateRandomNumber}
-                  />
-                </div>
-              ))}
-            </>
-          </div>
+          {randomNumberArray?.map((num, i) => (
+            <div
+              key={`div-${i}`}
+              className="border border-4 border-white relative hover:cursor-pointer"
+            >
+              <Carta
+                key={i}
+                cardNum={num}
+                generateRandomNumber={generateRandomNumber}
+              />
+            </div>
+          ))}
         </>
-      )}
+      </div>
+      {/* </>
+      )} */}
     </div>
   );
 }
