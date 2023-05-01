@@ -38,30 +38,40 @@ export default function Dealer() {
   };
 
   return (
-    <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10">
-      <Nav reason={"end game"} />
-      <div className="flex flex-row justify-center pt-8">
-        {!hasStarted ? (
-          <button
-            onClick={() => {
-              getCard();
-              setHasStarted(true);
-            }}
-          >
+    <>
+      {!hasStarted ? (
+        <>
+          <section className="h-screen">
+            <div className="flex flex-row h-2/3 lg:h-full w-full items-center justify-center">
+              <button
+                className="text-white w-2/3 md:w-1/2 max-w-[400px]"
+                onClick={() => {
+                  getCard();
+                  setHasStarted(true);
+                }}
+              >
+                <img
+                  className="animate-pulse"
+                  src="/images/start-game.png"
+                  alt="star wars splash image"
+                />
+              </button>
+            </div>
             <img
-              className="h-[300px]"
-              src="/images/start.png"
+              className="absolute bottom-0 right-0"
+              src="/images/baby-yoda.png"
               alt="star wars splash image"
             />
-          </button>
-        ) : (
-          <div className="h-[300px] w-[200px] border border-[12px] border-white shadow-2xl">
-            <Carta cardNum={cardNum} />
+          </section>
+        </>
+      ) : (
+        <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
+          <Nav reason={"end game"} />
+          <div className="flex flex-row justify-center pt-8">
+            <div className="h-[300px] w-[200px] border border-[12px] border-white shadow-2xl">
+              <Carta cardNum={cardNum} />
+            </div>
           </div>
-        )}
-      </div>
-      {hasStarted && (
-        <>
           <div className="flex flex-row justify-center pb-8">
             <button
               className=""
@@ -84,8 +94,8 @@ export default function Dealer() {
               ))}
             </>
           </div>
-        </>
+        </section>
       )}
-    </section>
+    </>
   );
 }
