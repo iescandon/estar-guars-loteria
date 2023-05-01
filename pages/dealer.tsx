@@ -68,7 +68,7 @@ export default function Dealer() {
         <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
           <Nav reason={"end game"} />
           <div className="flex flex-row justify-center pt-8">
-            <div className="h-[300px] w-[200px] border border-[12px] border-white shadow-2xl">
+            <div className="h-[300px] w-[200px] border border-[12px] border-white bg-white shadow-2xl">
               <Carta cardNum={cardNum} />
             </div>
           </div>
