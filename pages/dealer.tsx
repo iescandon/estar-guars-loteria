@@ -47,7 +47,7 @@ export default function Dealer() {
             {/* {screenHeight && (
               <> */}
             <div
-              className="flex flex-row h-[550px] md:h-2/3 lg:h-full w-full items-center justify-center"
+              className="flex flex-row h-[200px] md:h-2/3 lg:h-full w-full items-center justify-center"
               // className={`flex flex-row h-[${screenHeight}px] md:h-2/3 lg:h-full w-full items-center justify-center`}
             >
               <button
