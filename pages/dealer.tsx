@@ -74,12 +74,12 @@ export default function Dealer() {
           </div>
           <div className="flex flex-row justify-center pt-3 pb-8">
             <button
-              className="bg-[#ffe81f] text-black text-xl md:text-3xl px-2 rounded-full"
+              className="bg-[#ffe81f] text-black text-3xl px-2 rounded-full"
               onClick={() => {
                 getCard();
               }}
             >
-              ➜
+              <p>➜</p>
             </button>
           </div>
           <div className="flex flex-row flex-wrap justify-center space-x-2">
