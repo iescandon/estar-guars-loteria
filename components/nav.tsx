@@ -1,11 +1,6 @@
 import Link from "next/link";
 
-type NavProps = {
-  reason: string;
-  path?: string;
-};
-
-export default function Nav({ reason, path }: NavProps) {
+export default function Nav() {
   return (
     <nav className="h-44 w-full flex flex-row justify-center">
       <Link className="h-full" href="/">

@@ -8,13 +8,15 @@ export default function Dealer() {
   const [discardedCardsArray, setDiscardedCardsArray] = useState<Array<number>>(
     []
   );
+  const [screenHeight, setScreenHeight] = useState<number | undefined>(
+    undefined
+  );
 
-  // useEffect(() => {
-  // setTimeout(() => {
-  //   setIsLoading(false);
-  // getCard();
-  // }, 3000);
-  // }, []);
+  useEffect(() => {
+    if (window) {
+      setScreenHeight(window.innerHeight - 342);
+    }
+  }, []);
 
   const generateRandomNumber = (num: number) =>
     Math.floor(Math.random() * num) + 1;
@@ -41,8 +43,13 @@ export default function Dealer() {
     <>
       {!hasStarted ? (
         <>
-          <section className="h-screen">
-            <div className="flex flex-row h-2/3 lg:h-full w-full items-center justify-center">
+          <section className="md:h-screen p-4">
+            {/* {screenHeight && (
+              <> */}
+            <div
+              className="flex flex-row h-[550px] md:h-2/3 lg:h-full w-full items-center justify-center"
+              // className={`flex flex-row h-[${screenHeight}px] md:h-2/3 lg:h-full w-full items-center justify-center`}
+            >
               <button
                 className="text-white w-2/3 md:w-1/2 max-w-[400px]"
                 onClick={() => {
@@ -58,15 +65,17 @@ export default function Dealer() {
               </button>
             </div>
             <img
-              className="absolute bottom-0 right-0"
+              className="md:absolute md:bottom-0 md:right-0"
               src="/images/baby-yoda.png"
               alt="star wars splash image"
             />
+            {/* </>
+            )} */}
           </section>
         </>
       ) : (
-        <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
-          <Nav reason={"end game"} />
+        <section className="md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
+          <Nav />
           <div className="flex flex-row justify-center pt-8">
             <div className="h-[300px] w-[200px] border border-[12px] border-white bg-white shadow-2xl">
               <Carta cardNum={cardNum} />
