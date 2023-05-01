@@ -8,20 +8,22 @@ export default function Dealer() {
   const [discardedCardsArray, setDiscardedCardsArray] = useState<Array<number>>(
     []
   );
-  const [screenHeight, setScreenHeight] = useState<number | undefined>(
-    undefined
-  );
+  // const [screenHeight, setScreenHeight] = useState<number | undefined>(
+  //   undefined
+  // );
+  // const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (window) {
-      setScreenHeight(window.innerHeight - 342);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window) {
+  //     setScreenHeight(window.innerHeight - 342);
+  //   }
+  // }, []);
 
   const generateRandomNumber = (num: number) =>
     Math.floor(Math.random() * num) + 1;
 
   const getCard = () => {
+    // setIsDisabled(true);
     if (cardNum) {
       const array: Array<number> = [...discardedCardsArray, cardNum];
       setDiscardedCardsArray(array);
@@ -37,6 +39,7 @@ export default function Dealer() {
         check = false;
       }
     }
+    // setIsDisabled(false);
   };
 
   return (
@@ -83,10 +86,12 @@ export default function Dealer() {
           </div>
           <div className="flex flex-row justify-center pt-3 pb-8">
             <button
+              id="nextBtn"
               className="bg-[#ffe81f] text-black text-3xl px-2 rounded-full"
               onClick={() => {
                 getCard();
               }}
+              // disabled={isDisabled}
             >
               <p>➜</p>
             </button>

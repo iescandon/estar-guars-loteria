@@ -9,7 +9,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center md:w-1/2 pb-6 md:pb-0">
           <Link className="" href="/dealer">
             <img
-              className="h-[200px] md:h-[400px]"
+              className="h-[250px] md:h-[400px]"
               src="/images/dealer.png"
               alt="star wars splash image"
             />
@@ -18,7 +18,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center md:w-1/2">
           <Link className="" href="/player">
             <img
-              className="h-[200px] md:h-[400px]"
+              className="h-[250px] md:h-[400px]"
               src="/images/player.png"
               alt="star wars splash image"
             />
