@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { generateRandomNumber } from "../utils/index";
 
 type CartaProps = {
   cardNum: number | undefined;
@@ -15,9 +16,6 @@ export default function Carta({ cardNum, clickable }: CartaProps) {
       setBeanNum(num);
     }
   }, []);
-
-  const generateRandomNumber = (num: number) =>
-    Math.floor(Math.random() * num) + 1;
 
   return (
     <>

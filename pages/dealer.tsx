@@ -95,7 +95,7 @@ export default function Dealer() {
               <div className="flex flex-row justify-center pt-3 pb-8">
                 <button
                   id="nextBtn"
-                  className="bg-[#ffe81f] text-black text-3xl px-2 rounded-full"
+                  className="bg-[#ffe81f] text-black text-3xl w-[50px] px-2 rounded-full"
                   onClick={() => {
                     getNewCard();
                   }}

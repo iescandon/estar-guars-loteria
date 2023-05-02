@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import Tabla from "@/components/tabla";
+import { generateRandomNumber } from "../utils/index";
 
 export default function Player() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [randomNumberArray, setRandomNumberArray] = useState<
     Array<number> | undefined
   >(undefined);
-
-  const generateRandomNumber = (num: number) =>
-    Math.floor(Math.random() * num) + 1;
 
   useEffect(() => {
     generateArray();
