@@ -51,17 +51,17 @@ export default function Player() {
 
   return (
     <>
-      <section
+      {/* <section
         className={`flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white relative ${
           isLoading && "h-screen"
         }`}
-      >
-        <img
+      > */}
+      <section className="flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white relative">
+        {/* <img
           className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 h-8 w-8 animate-ping"
           src="/images/cog.png"
           alt="cog loading icon"
-        />
-
+        /> */}
         <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />
       </section>
     </>
