@@ -61,7 +61,7 @@ export default function Dealer() {
           <section className="h-screen p-4">
             <div className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center">
               <button
-                className="text-white w-2/3 md:w-1/2 max-w-[400px]"
+                className="text-white w-1/2 md:w-1/2 max-w-[300px]"
                 onClick={() => {
                   const firstNum = shuffledCardsArray[0];
                   setCardNum(firstNum);
@@ -71,14 +71,14 @@ export default function Dealer() {
                 <img
                   className="animate-pulse"
                   src="/images/start-game.png"
-                  alt="star wars splash image"
+                  alt="start game"
                 />
               </button>
             </div>
             <img
               className="absolute bottom-0 right-0"
               src="/images/baby-yoda.png"
-              alt="star wars splash image"
+              alt="baby yoda pressing button"
             />
           </section>
         </>

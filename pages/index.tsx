@@ -11,7 +11,7 @@ export default function Home() {
             <img
               className="h-[250px] md:h-[400px]"
               src="/images/dealer.png"
-              alt="star wars splash image"
+              alt="darth vader holding loteria card like a card dealer"
             />
           </Link>
         </div>
@@ -20,7 +20,7 @@ export default function Home() {
             <img
               className="h-[250px] md:h-[400px]"
               src="/images/player.png"
-              alt="star wars splash image"
+              alt="star wars loteria card"
             />
           </Link>
         </div>

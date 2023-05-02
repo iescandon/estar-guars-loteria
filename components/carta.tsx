@@ -27,9 +27,6 @@ export default function Carta({ cardNum }: CartaProps) {
           const click: boolean = !isSelected;
           setIsSelected(click);
         }}
-        onLoad={() => {
-          console.log(`loaded card num: ${cardNum}`);
-        }}
       />
       <div className={`${isSelected ? "visible" : "invisible"}`}>
         <img

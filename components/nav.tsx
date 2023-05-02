@@ -7,18 +7,9 @@ export default function Nav() {
         <img
           className="h-full drop-shadow-xl"
           src="/images/nav-logo.png"
-          alt="star wars splash image"
+          alt="star wars loteria logo"
         />
       </Link>
-      {/* {reason === "end game" ? (
-        <Link className="absolute top-6 right-6" href="/">
-          END GAME
-        </Link>
-      ) : (
-        <Link className="absolute top-6 right-6" href={`/${path}`}>
-          HOW TO PLAY
-        </Link>
-      )} */}
     </nav>
   );
 }
