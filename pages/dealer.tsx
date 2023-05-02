@@ -107,12 +107,12 @@ export default function Dealer() {
           ) : (
             <div className="py-4"></div>
           )}
-          <div className="flex flex-row flex-wrap justify-center space-x-2">
+          <div className="flex flex-row flex-wrap justify-center">
             <>
               {discardedCardsArray?.map((num, i) => (
                 <div
                   key={`div-${i}`}
-                  className="border border-8 border-white bg-white mb-2 shadow-2xl"
+                  className="border border-8 border-white bg-white mx-1 mb-2 shadow-2xl"
                 >
                   <Carta key={i} cardNum={num} clickable={false} />
                 </div>
