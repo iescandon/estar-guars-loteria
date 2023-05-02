@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 
 type CartaProps = {
   cardNum: number | undefined;
+  clickable: boolean;
 };
 
-export default function Carta({ cardNum }: CartaProps) {
+export default function Carta({ cardNum, clickable }: CartaProps) {
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [beanNum, setBeanNum] = useState<number>(1);
 
   useEffect(() => {
-    const num: number = generateRandomNumber(13);
-    setBeanNum(num);
+    if (clickable) {
+      const num: number = generateRandomNumber(13);
+      setBeanNum(num);
+    }
   }, []);
 
   const generateRandomNumber = (num: number) =>
@@ -28,25 +31,27 @@ export default function Carta({ cardNum }: CartaProps) {
           setIsSelected(click);
         }}
       />
-      <div className={`${isSelected ? "visible" : "invisible"}`}>
-        <img
-          className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-10 h-16 w-16 drop-shadow-xl"
-          key={`bean-${beanNum}`}
-          src={`/images/beans/${beanNum}.png`}
-          alt="bean"
-          onClick={() => {
-            const click: boolean = !isSelected;
-            setIsSelected(click);
-          }}
-        />
-        <button
-          className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-0 h-full w-full bg-black opacity-50"
-          onClick={() => {
-            const click: boolean = !isSelected;
-            setIsSelected(click);
-          }}
-        ></button>
-      </div>
+      {clickable && (
+        <div className={`${isSelected ? "visible" : "invisible"}`}>
+          <img
+            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-10 h-16 w-16 drop-shadow-xl"
+            key={`bean-${beanNum}`}
+            src={`/images/beans/${beanNum}.png`}
+            alt="bean"
+            onClick={() => {
+              const click: boolean = !isSelected;
+              setIsSelected(click);
+            }}
+          />
+          <button
+            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-0 h-full w-full bg-black opacity-50"
+            onClick={() => {
+              const click: boolean = !isSelected;
+              setIsSelected(click);
+            }}
+          ></button>
+        </div>
+      )}
     </>
   );
 }

@@ -21,7 +21,7 @@ export default function Tabla({ isLoading, randomNumberArray }: TablaProps) {
                 key={`div-${i}`}
                 className="border border-4 border-white relative hover:cursor-pointer"
               >
-                <Carta key={i} cardNum={num} />
+                <Carta key={i} cardNum={num} clickable={true} />
               </div>
             ))}
           </>

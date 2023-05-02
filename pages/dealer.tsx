@@ -89,7 +89,7 @@ export default function Dealer() {
             <>
               <div className="flex flex-row justify-center pt-8">
                 <div className="h-[300px] w-[200px] border border-[12px] border-white bg-white shadow-2xl">
-                  <Carta cardNum={cardNum} />
+                  <Carta cardNum={cardNum} clickable={false} />
                 </div>
               </div>
               <div className="flex flex-row justify-center pt-3 pb-8">
@@ -114,7 +114,7 @@ export default function Dealer() {
                   key={`div-${i}`}
                   className="border border-8 border-white bg-white mb-2 shadow-2xl"
                 >
-                  <Carta key={i} cardNum={num} />
+                  <Carta key={i} cardNum={num} clickable={false} />
                 </div>
               ))}
             </>

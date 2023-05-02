@@ -52,11 +52,19 @@ export default function Player() {
   };
 
   return (
-    <>
-      <section className="flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white">
-        <div className={`h-full ${isLoading ? "visible" : "invisible"}`}></div>
-        <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />
-      </section>
-    </>
+    <section
+      className={`flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white relative ${
+        isLoading && "h-screen"
+      }`}
+    >
+      {/* <div
+        className={`absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 animate-spin ${
+          isLoading ? "visible" : "invisible"
+        }`}
+      >
+        test
+      </div> */}
+      <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />
+    </section>
   );
 }
