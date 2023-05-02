@@ -47,7 +47,7 @@ export default function HowToPlay() {
           </ol>
           <div className="flex flex-row w-full justify-center">
             <Link
-              className="bg-[#ffe81f] px-3 py-1 rounded-full text-lg font-semibold"
+              className="bg-starWarsYellow px-3 py-1 rounded-full text-lg font-semibold"
               href="/dealer"
             >
               START

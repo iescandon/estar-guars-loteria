@@ -31,3 +31,9 @@ body {
 body {
   background-color: #121313;
 }
+
+/* .glow {
+  -webkit-box-shadow: 0 0 40px 15px rgb(99, 99, 113);
+  -moz-box-shadow: 0 0 40px 15px rgb(99, 99, 113);
+  box-shadow: 0 0 40px 15px rgb(99, 99, 113);
+} */

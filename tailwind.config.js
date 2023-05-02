@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // stickyNoteYellow: "#ffff88",
+        starWarsYellow: "#ffe81f",
       },
       fontFamily: {
         bayon: "Bayon",
@@ -24,6 +24,7 @@ module.exports = {
           "0 35px 35px rgba(0, 0, 0, 0.25)",
           "0 45px 65px rgba(0, 0, 0, 0.15)",
         ],
+        "5xl": "0 0px 100px 10px rgba(0, 0, 0, 0.25)",
       },
     },
     // animation: {
