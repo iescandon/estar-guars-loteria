@@ -53,7 +53,7 @@ export default function Player() {
     <>
       <div
         className={`w-full flex flex-row justify-center items-center ${
-          isLoading ? "mt-[250px] md:mt-0 md:h-screen" : "h-0 hidden"
+          isLoading ? "mt-[275px] md:mt-0 md:h-screen" : "h-0 hidden"
         }`}
       >
         <span className="animate-ping">
