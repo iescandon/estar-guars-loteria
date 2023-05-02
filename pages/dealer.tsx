@@ -100,7 +100,7 @@ export default function Dealer() {
                     getNewCard();
                   }}
                 >
-                  <p className="font-[800]">&#8594;</p>
+                  <p className="font-[900]">&#8594;</p>
                 </button>
               </div>
             </>
