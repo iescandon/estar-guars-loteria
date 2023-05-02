@@ -92,10 +92,10 @@ export default function Dealer() {
                   <Carta cardNum={cardNum} clickable={false} />
                 </div>
               </div>
-              <div className="flex flex-row justify-center pt-3 pb-8">
+              <div className="flex flex-row justify-center items-center pt-3 pb-8">
                 <button
                   id="nextBtn"
-                  className="bg-[#ffe81f] text-black text-xl md:text-3xl w-[50px] px-2 rounded-full"
+                  className="bg-[#ffe81f] text-black text-3xl w-[50px] h-[40px] rounded-full"
                   onClick={() => {
                     getNewCard();
                   }}
