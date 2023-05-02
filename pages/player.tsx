@@ -51,7 +51,11 @@ export default function Player() {
 
   return (
     <>
-      <section className="flex flex-row w-full md:items-center justify-center md:p-4 md:min-h-screen bg-white">
+      <section
+        className={`flex flex-row w-full md:items-center justify-center md:p-4 md:min-h-screen bg-white ${
+          isLoading && "h-screen"
+        }`}
+      >
         <div className={`animate-ping ${isLoading ? "show" : "hidden"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
