@@ -3,9 +3,14 @@ import { useState } from "react";
 type CartaProps = {
   cardNum: number | undefined;
   generateRandomNumber?: Function;
+  // handleImageLoaded: Function;
 };
 
-export default function Carta({ cardNum, generateRandomNumber }: CartaProps) {
+export default function Carta({
+  cardNum,
+  generateRandomNumber,
+}: // handleImageLoaded,
+CartaProps) {
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [beanNum, setBeanNum] = useState<number>(1);
 
@@ -23,6 +28,9 @@ export default function Carta({ cardNum, generateRandomNumber }: CartaProps) {
             const num: number = generateRandomNumber(13);
             setBeanNum(num);
           }
+        }}
+        onLoad={() => {
+          console.log(`loaded card num: ${cardNum}`);
         }}
       />
       {generateRandomNumber && (

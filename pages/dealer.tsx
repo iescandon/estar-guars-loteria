@@ -4,42 +4,54 @@ import Nav from "@/components/nav";
 
 export default function Dealer() {
   const [hasStarted, setHasStarted] = useState<boolean>(false);
+  const [hasEnded, setHasEnded] = useState<boolean>(false);
   const [cardNum, setCardNum] = useState<number | undefined>(undefined);
+  const [shuffledCardsArray, setShuffledCardsArray] = useState<Array<number>>(
+    []
+  );
   const [discardedCardsArray, setDiscardedCardsArray] = useState<Array<number>>(
     []
   );
-  // const [screenHeight, setScreenHeight] = useState<number | undefined>(
-  //   undefined
-  // );
-  // const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   if (window) {
-  //     setScreenHeight(window.innerHeight - 342);
-  //   }
-  // }, []);
+  useEffect(() => {
+    createAndShuffleDeck();
+  }, []);
 
-  const generateRandomNumber = (num: number) =>
-    Math.floor(Math.random() * num) + 1;
+  const createAndShuffleDeck = () => {
+    let tempDeck: Array<number> = [];
+    for (let i = 1; i < 55; i++) {
+      tempDeck.push(i);
+    }
+    for (let i = tempDeck.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * i);
+      let temp = tempDeck[i];
+      tempDeck[i] = tempDeck[j];
+      tempDeck[j] = temp;
+    }
+    setShuffledCardsArray(tempDeck);
+  };
 
-  const getCard = () => {
-    // setIsDisabled(true);
-    if (cardNum) {
-      const array: Array<number> = [...discardedCardsArray, cardNum];
-      setDiscardedCardsArray(array);
+  const getNewCard = () => {
+    //remove first card and put the rest back into remaining shuffled cards
+    const tempArray: Array<number> = [...shuffledCardsArray];
+    const oldCard = tempArray.splice(0, 1);
+    setShuffledCardsArray(tempArray);
+
+    // move old card to discarded pile
+    const discardedTempArray: Array<number> = [
+      ...discardedCardsArray,
+      oldCard[0],
+    ];
+    setDiscardedCardsArray(discardedTempArray);
+
+    //check if there are any cards left, end game
+    if (tempArray.length === 0) {
+      setHasEnded(true);
     }
-    if (discardedCardsArray.length === 55) {
-      setDiscardedCardsArray([]);
-    }
-    let check = true;
-    while (check === true) {
-      const num: number = generateRandomNumber(54);
-      if (!discardedCardsArray?.includes(num)) {
-        setCardNum(num);
-        check = false;
-      }
-    }
-    // setIsDisabled(false);
+
+    // set newcard num
+    const nextNum = tempArray[0];
+    setCardNum(nextNum);
   };
 
   return (
@@ -47,16 +59,12 @@ export default function Dealer() {
       {!hasStarted ? (
         <>
           <section className="h-screen p-4">
-            {/* {screenHeight && (
-              <> */}
-            <div
-              className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center"
-              // className={`flex flex-row h-[${screenHeight}px] md:h-2/3 lg:h-full w-full items-center justify-center`}
-            >
+            <div className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center">
               <button
                 className="text-white w-2/3 md:w-1/2 max-w-[400px]"
                 onClick={() => {
-                  getCard();
+                  const firstNum = shuffledCardsArray[0];
+                  setCardNum(firstNum);
                   setHasStarted(true);
                 }}
               >
@@ -72,30 +80,33 @@ export default function Dealer() {
               src="/images/baby-yoda.png"
               alt="star wars splash image"
             />
-            {/* </>
-            )} */}
           </section>
         </>
       ) : (
         <section className="md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
           <Nav />
-          <div className="flex flex-row justify-center pt-8">
-            <div className="h-[300px] w-[200px] border border-[12px] border-white bg-white shadow-2xl">
-              <Carta cardNum={cardNum} />
-            </div>
-          </div>
-          <div className="flex flex-row justify-center pt-3 pb-8">
-            <button
-              id="nextBtn"
-              className="bg-[#ffe81f] text-black text-3xl px-2 rounded-full"
-              onClick={() => {
-                getCard();
-              }}
-              // disabled={isDisabled}
-            >
-              <p>➜</p>
-            </button>
-          </div>
+          {!hasEnded ? (
+            <>
+              <div className="flex flex-row justify-center pt-8">
+                <div className="h-[300px] w-[200px] border border-[12px] border-white bg-white shadow-2xl">
+                  <Carta cardNum={cardNum} />
+                </div>
+              </div>
+              <div className="flex flex-row justify-center pt-3 pb-8">
+                <button
+                  id="nextBtn"
+                  className="bg-[#ffe81f] text-black text-3xl px-2 rounded-full"
+                  onClick={() => {
+                    getNewCard();
+                  }}
+                >
+                  <p>➜</p>
+                </button>
+              </div>
+            </>
+          ) : (
+            <div className="py-4"></div>
+          )}
           <div className="flex flex-row flex-wrap justify-center space-x-2">
             <>
               {discardedCardsArray?.map((num, i) => (
