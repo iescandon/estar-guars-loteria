@@ -50,19 +50,25 @@ export default function Player() {
   };
 
   return (
-    <section
-      className={`flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white relative ${
-        isLoading && "h-screen"
-      }`}
-    >
-      {/* <div
-        className={`absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 animate-spin ${
-          isLoading ? "visible" : "invisible"
+    <>
+      <div
+        className={`w-full flex flex-row justify-center items-center bg-white ${
+          isLoading ? "h-screen" : "h-0"
         }`}
       >
-        test
-      </div> */}
-      <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />
-    </section>
+        <img
+          className="h-8 w-8 animate-ping"
+          src="/images/cog.png"
+          alt="cog loading icon"
+        />
+      </div>
+      <section
+        className={`flex flex-row md:items-center justify-center md:p-4 md:min-h-screen bg-white relative ${
+          isLoading && "h-screen"
+        }`}
+      >
+        <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />
+      </section>
+    </>
   );
 }
