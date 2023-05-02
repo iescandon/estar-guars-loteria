@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
 import Carta from "./carta";
 
 type TablaProps = {
-  generateRandomNumber: Function;
+  randomNumberArray: Array<number> | null;
 };
 
-export default function Tabla({ generateRandomNumber }: TablaProps) {
-  const [randomNumberArray, setRandomNumberArray] =
-    useState<Array<number> | null>(null);
+export default function Tabla({ randomNumberArray }: TablaProps) {
   // const [loadedImages, setLoadedImages] = useState<Array<object>>([]);
   // const [ready, setReady] = useState<boolean>(false);
 
@@ -23,10 +20,6 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
   //   }
   // };
 
-  useEffect(() => {
-    generateArray();
-  }, []);
-
   // Promise.all(
   //   Array.from(document.images).map((img) => {
   //     if (img.complete) return Promise.resolve(img.naturalHeight !== 0);
@@ -41,29 +34,8 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
   //   else console.log("some images failed to load, all finished loading");
   // });
 
-  useEffect(() => {
-    console.log("loading");
-  }, []);
-
-  const generateArray = () => {
-    let count: number = 0;
-    let array: Array<number> = [];
-
-    while (count < 16) {
-      const num: number = generateRandomNumber(54);
-      if (!array.includes(num)) {
-        array.push(num);
-        count++;
-      }
-    }
-    setRandomNumberArray(array);
-  };
-
   return (
     <div className="flex flex-col">
-      {/* <div className={`flex flex-col ${ready ? "invisible" : "visible"}`}> */}
-      {/* {!isLoading && (
-        <> */}
       <img
         className="md:shadow-3xl"
         src="/images/title.png"
@@ -79,18 +51,11 @@ export default function Tabla({ generateRandomNumber }: TablaProps) {
               key={`div-${i}`}
               className="border border-4 border-white relative hover:cursor-pointer"
             >
-              <Carta
-                key={i}
-                cardNum={num}
-                generateRandomNumber={generateRandomNumber}
-                // handleImageLoaded={handleImageLoaded}
-              />
+              <Carta key={i} cardNum={num} />
             </div>
           ))}
         </>
       </div>
-      {/* </>
-      )} */}
     </div>
   );
 }
