@@ -44,7 +44,7 @@ export default function Player() {
     ).then((results) => {
       if (results.every((res) => res)) {
         console.log("all images loaded successfully");
-        // setIsLoading(false);
+        setIsLoading(false);
       } else console.log("some images failed to load, all finished loading");
     });
   };
