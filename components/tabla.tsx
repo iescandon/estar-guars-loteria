@@ -8,7 +8,11 @@ type TablaProps = {
 export default function Tabla({ isLoading, randomNumberArray }: TablaProps) {
   return (
     <>
-      <div className={`flex flex-col ${isLoading ? "invisible" : "visible"}`}>
+      <div
+        className={`flex flex-col ${
+          isLoading ? "invisible h-0 overflow-hidden" : "visible"
+        }`}
+      >
         <img
           className="md:shadow-3xl"
           src="/images/title.png"

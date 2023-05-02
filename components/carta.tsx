@@ -32,7 +32,7 @@ export default function Carta({ cardNum, clickable }: CartaProps) {
       {clickable && (
         <div className={`${isSelected ? "visible" : "invisible"}`}>
           <img
-            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-10 h-16 w-16 drop-shadow-xl"
+            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 z-10 h-16 w-16 drop-shadow-xl"
             key={`bean-${beanNum}`}
             src={`/images/beans/${beanNum}.png`}
             alt="bean"
@@ -42,7 +42,7 @@ export default function Carta({ cardNum, clickable }: CartaProps) {
             }}
           />
           <button
-            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2  z-0 h-full w-full bg-black opacity-50"
+            className="absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 z-0 h-full w-full bg-black opacity-50"
             onClick={() => {
               const click: boolean = !isSelected;
               setIsSelected(click);
