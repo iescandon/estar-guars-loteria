@@ -53,7 +53,7 @@ export default function Player() {
     <>
       <div
         className={`w-full flex flex-row justify-center items-center ${
-          isLoading ? "h-mobileScreen md:h-screen" : "h-0 hidden"
+          isLoading ? "mt-[275px] md:mt-0 md:h-screen" : "h-0 hidden"
         }`}
       >
         <span className="animate-ping">
@@ -82,7 +82,7 @@ export default function Player() {
       </div>
       <section
         className={`flex flex-row w-full md:items-center justify-center md:p-4 ${
-          isLoading ? "h-0" : "min-h-mobileScreen md:min-h-screen"
+          isLoading ? "h-0" : "md:min-h-screen"
         }`}
       >
         <Tabla isLoading={isLoading} randomNumberArray={randomNumberArray} />

@@ -58,8 +58,8 @@ export default function Dealer() {
     <>
       {!hasStarted ? (
         <>
-          <section className="h-mobileScreen md:h-screen p-4">
-            <div className="flex flex-row h-2/3 md:h-full w-full items-center justify-center">
+          <section className="md:min-h-screen p-4">
+            <div className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center">
               <button
                 className="text-white w-1/2 md:w-1/2 max-w-[300px]"
                 onClick={() => {
@@ -76,14 +76,14 @@ export default function Dealer() {
               </button>
             </div>
             <img
-              className="absolute bottom-0 right-0 h-[40%]"
+              className="absolute bottom-0 right-0"
               src="/images/baby-yoda.png"
               alt="baby yoda pressing button"
             />
           </section>
         </>
       ) : (
-        <section className="min-h-mobileScreen md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
+        <section className="md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
           <Nav />
           {!hasEnded ? (
             <>
