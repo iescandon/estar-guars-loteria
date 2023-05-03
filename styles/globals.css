@@ -11,5 +11,32 @@ body,
 }
 
 body {
-  background-color: #121313;
+  /* background-color: #121313; */
+
+  /* background-image: radial-gradient(
+    circle,
+    #1a1a1a,
+    #151515,
+    #101010,
+    #080808,
+    #000000
+  ); */
+
+  background-image: radial-gradient(
+    circle,
+    #202020,
+    #1a1a1a,
+    #141414,
+    #0b0b0b,
+    #000000
+  );
+
+  /* background-image: radial-gradient(
+    circle,
+    #000000,
+    #0b0b0b,
+    #141414,
+    #1a1a1a,
+    #202020
+  ); */
 }
