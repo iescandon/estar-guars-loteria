@@ -7,9 +7,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // height: {
-      //   mobileScreen: "calc(var(--vh, 1vh) * 100)",
-      // },
       colors: {
         starWarsYellow: "#ffe81f",
       },
@@ -30,9 +27,6 @@ module.exports = {
         "5xl": "0 0px 100px 10px rgba(0, 0, 0, 0.25)",
       },
     },
-    // animation: {
-    //   "spin-slow": "spin 2s linear infinite",
-    // },
   },
   plugins: [],
 };

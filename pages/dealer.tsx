@@ -59,9 +59,9 @@ export default function Dealer() {
       {!hasStarted ? (
         <>
           <section className="h-screen p-4">
-            <div className="flex flex-row h-2/3 md:h-full w-full items-center justify-center">
+            <div className="flex flex-row h-full w-full items-center justify-center">
               <button
-                className="text-white w-1/2 md:w-1/2 max-w-[300px]"
+                className="text-white w-2/3 md:w-1/2 max-w-[300px]"
                 onClick={() => {
                   const firstNum = shuffledCardsArray[0];
                   setCardNum(firstNum);
@@ -83,7 +83,7 @@ export default function Dealer() {
           </section>
         </>
       ) : (
-        <section className="md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
+        <section className="min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
           <Nav />
           {!hasEnded ? (
             <>

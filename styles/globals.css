@@ -4,45 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html,
+body,
+.app {
+  height: 100%;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
 
 body {
   background-color: #121313;
-}
-
-/* .glow {
-  -webkit-box-shadow: 0 0 40px 15px rgb(99, 99, 113);
-  -moz-box-shadow: 0 0 40px 15px rgb(99, 99, 113);
-  box-shadow: 0 0 40px 15px rgb(99, 99, 113);
-} */
-
-.full-screen {
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-.min-full-screen {
-  min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  min-height: calc(var(--vh, 1vh) * 100);
 }
