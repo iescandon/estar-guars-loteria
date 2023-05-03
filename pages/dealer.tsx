@@ -58,7 +58,7 @@ export default function Dealer() {
     <>
       {!hasStarted ? (
         <>
-          <section className="md:min-h-screen p-4">
+          <section className="h-screen p-4">
             <div className="flex flex-row h-[60%] lg:h-full w-full items-center justify-center">
               <button
                 className="text-white w-1/2 md:w-1/2 max-w-[300px]"

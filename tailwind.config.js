@@ -7,9 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      height: {
-        mobileScreen: "calc(var(--vh, 1vh) * 100)",
-      },
+      // height: {
+      //   mobileScreen: "calc(var(--vh, 1vh) * 100)",
+      // },
       colors: {
         starWarsYellow: "#ffe81f",
       },
