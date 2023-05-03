@@ -37,3 +37,8 @@ body {
   -moz-box-shadow: 0 0 40px 15px rgb(99, 99, 113);
   box-shadow: 0 0 40px 15px rgb(99, 99, 113);
 } */
+
+.full-screen {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
