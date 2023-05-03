@@ -61,7 +61,7 @@ export default function Dealer() {
           <section className="h-screen p-4">
             <div className="flex flex-row h-[60%] md:h-full w-full items-center justify-center">
               <button
-                className="text-white w-1/2 md:w-1/2 max-w-[300px]"
+                className="text-white w-2/3 md:w-1/2 max-w-[300px]"
                 onClick={() => {
                   const firstNum = shuffledCardsArray[0];
                   setCardNum(firstNum);
