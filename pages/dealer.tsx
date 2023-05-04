@@ -83,6 +83,7 @@ export default function Dealer() {
           </section>
         </>
       ) : (
+        // p-4 md:pt-8 md:pb-12 md:px-10
         <section className="md:min-h-screen p-4 md:pt-8 md:pb-12 md:px-10 relative">
           <Nav />
           {!hasEnded ? (

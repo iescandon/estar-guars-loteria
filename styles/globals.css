@@ -6,7 +6,7 @@
 
 html,
 body,
-.app {
+#__next {
   height: 100%;
 }
 
@@ -39,4 +39,11 @@ body {
     #1a1a1a,
     #202020
   ); */
+}
+@media only screen and (min-width: 768px) {
+  .rounded-top-corners {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
+  }
 }
